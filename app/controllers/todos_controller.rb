@@ -19,7 +19,8 @@ class TodosController < ApplicationController
       #adding the user_id
       todo_create[:user_id] = @user.id
       @todo = Todo.create!(todo_create) #the model will auto convert strings into their respective types
-      json_response(@todo, :created)
+      @with_category = {todo: @todo, categories: @todo.categories}
+      json_response(@with_category, :created)
     end
   
     # GET /todos/:id
@@ -36,7 +37,8 @@ class TodosController < ApplicationController
       #adding the user_id
       todo_create[:user_id] = @user.id
       @todo.update(todo_create)
-      head :no_content
+      @with_category = {todo: @todo, categories: @todo.categories}
+      json_response(@with_category, :created)
     end
   
     # DELETE /todos/:id

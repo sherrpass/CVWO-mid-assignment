@@ -34,7 +34,7 @@ class CategoriesController < ApplicationController
 
   def category_params
     # whitelist params #properties tied directly to params, not within an object
-    params.permit(:name)
+    params.permit(:name,:description)
   end
 
   def set_category
