@@ -5,7 +5,7 @@ class ApplicationController < ActionController::API
   before_action :authorized
 
   def encode_token(payload)
-    JWT.encode(payload, 'sherpass')
+    JWT.encode(payload, ENV["JWT_SECRET"])
   end
 
   def auth_header

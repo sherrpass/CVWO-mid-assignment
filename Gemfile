@@ -27,6 +27,7 @@ gem 'rack-cors'
 
 gem 'jwt'
 
+gem 'figaro'
 # To fix syntax from rails 5 not compatible with rails 6
 gem 'rubocop-faker'
 gem 'rubocop-rspec', require: false
