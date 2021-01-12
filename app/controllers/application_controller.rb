@@ -18,7 +18,7 @@ class ApplicationController < ActionController::API
       token = auth_header
       # header: { 'Authorization': '<token>' }
       begin
-        JWT.decode(token, 'sherpass', true, algorithm: 'HS256')
+        JWT.decode(token, ENV["JWT_SECRET"], true, algorithm: 'HS256')
       rescue JWT::DecodeError
         nil
       end

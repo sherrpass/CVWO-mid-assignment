@@ -55,7 +55,7 @@ class TodosController < ApplicationController
   
     def todo_params
       # whitelist params #properties tied directly to params, not within an object
-      params.permit(:title, :description, :created_at, :due_by, :completed, :important, :category_ids)
+      params.permit(:title, :description, :created_at, :due_by, :completed, :important, :category_ids,:cart)
     end
   
     def set_todo
